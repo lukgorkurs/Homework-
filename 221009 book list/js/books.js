@@ -2,6 +2,7 @@
 const list = document.querySelector('#galery');
 const alert = document.querySelector('#alert');
 const btnSearch = document.querySelector('#btnSearch');
+const searchText = document.querySelector('#searchText');
 
 
 const books = [
@@ -95,10 +96,12 @@ const books = [
     }]
 
 
-    const generateList = () => {
+    const generateList = (filter) => {
         list.innerHTML = '';
       
-        books.forEach((book, index) => {
+        books
+          .filter(book => book.tittle.toLowerCase().includes(filter.toLowerCase()))
+          .forEach((book, index) => {
           list.innerHTML += `
           <li>
             <h3>${book.tittle}</h3>          
@@ -123,30 +126,29 @@ const books = [
         event.preventDefault();
 
         alert.innerHTML="";
-        const isValid = validateForm();
-        if(!isValid) {
-            alert.innerHTML="za mało znaków"            
+        
+        if (searchText.value.length===0) {
+            generateList('');   //all books
             return;
         }
+
+        const isValid = validateForm();
+        if(!isValid) {
+            alert.innerHTML="za mało znaków"    
+            searchText.value='';        
+            return;
+        }
+
+        //  alert.innerHTML=searchText.value;
+
+         generateList(searchText.value);
+
+         searchText.value='';
       
 
         // generateSlide();
       })
 
 
-    generateList();
+    generateList('');
 
-{/* <li>
-  <h3>Mały książe</h3>
-  <img src="https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp" alt="test"/></a>       
-   <br/>    
-   year: 1943<br/>
-   category: powieść filozoficzna<br/>
-   author: Antoine De Saint-Exupéry<br/>
-</li>    */}
-
-
-    // <li class="d-none ${index === activeSlide ? 'active' : ''}">
-    //           <img src=${slide.source} alt=${slide.alt} class="slider__photo"/>
-    //           <p class="slider__slide-title">${slide.text}</p>
-    //         </li>

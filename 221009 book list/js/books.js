@@ -1,7 +1,13 @@
+
+const list = document.querySelector('#galery');
+const alert = document.querySelector('#alert');
+const btnSearch = document.querySelector('#btnSearch');
+
+
 const books = [
     {
         tittle: "Mały książe",
-        year: "1943"
+        year: "1943",
         category: "powieść filozoficzna",
         image: "https://www.gandalf.com.pl/o/maly-ksiaze-p%2Cbig%2C534525.webp",
         alt: "Okładka Mały książe",
@@ -9,7 +15,7 @@ const books = [
     },
     {
         tittle: "Mistrz i Małgorzata",
-        year: "1966"
+        year: "1966",
         category: "powieść historyczna",
         image: "https://www.gandalf.com.pl/o/mistrz-i-malgorzata-x%2Cbig%2C701420.webp",
         alt: "Okładka Mistrz i Małgorzata",
@@ -17,7 +23,7 @@ const books = [
     },
     {	
         tittle: "Buszujący w zbożu",
-        year: "1951"
+        year: "1951",
         category: "literatura piękna",
         image: "https://ecsmedia.pl/c/buszujacy-w-zbozu-b-iext117338092.jpg",
         alt: "Okładka Buszujący w zbożu",
@@ -25,7 +31,7 @@ const books = [
     },	
     {        
         tittle: "Duma i uprzedzenie",
-        year: "1813" 	
+        year: "1813", 	
         category: "powieść historyczna",
         image: "https://www.gandalf.com.pl/o/duma-i-uprzedzenie-n%2Cbig%2C402912.webp",
         alt: "Okładka Duma i uprzedzenie",
@@ -33,7 +39,7 @@ const books = [
     },
     {	
         tittle: "Wichrowe wzgórza",
-        year: "1847"
+        year: "1847",
         category: "literatura piękna",
         image: "https://www.gandalf.com.pl/o/wichrowe-wzgorza-o%2Cbig%2C532013.webp",
         alt: "Okładka Wichrowe wzgórza",
@@ -41,15 +47,15 @@ const books = [
     },
     {	
         tittle: "Wyspa skarbów",
-        year: "1882"
+        year: "1882",
         category: "przygodowa",
         image: "https://www.gandalf.com.pl/o/wyspa-skarbow-o%2Cbig%2C476663.webp",
         alt: "Okładka Wyspa skarbów",
         author: "Robert Louis Stevenson",
     },
     {	
-        tittle: "Podróże z Charleyem. W poszukiwaniu Ameryki",
-        year: "1965"
+        tittle: "Podróże z Charleyem.",
+        year: "1965",
         category: "literatura piękna",
         image: "https://www.gandalf.com.pl/o/podroze-z-charleyem%2Cbig%2C476723.webp",
         alt: "Okładka Podróże z Charleyem. W poszukiwaniu Ameryki",
@@ -57,7 +63,7 @@ const books = [
     },
     {
         tittle: "Jądro ciemności",
-        year: "1899"
+        year: "1899",
         category: "powieść filozoficzna",
         image: "https://www.gandalf.com.pl/o/jadro-ciemnosci-e%2Cbig%2C289618.webp",
         alt: "Okładka Jądro ciemności",
@@ -65,7 +71,7 @@ const books = [
     },
     {	
         tittle: "Rok 1984",
-        year: "1949"
+        year: "1949",
         category: "utopia",
         image: "https://www.gandalf.com.pl/o/rok-1984-C%2Cbig%2C58326.webp",
         alt: "Okładka Rok 1984",
@@ -73,15 +79,15 @@ const books = [
     },
     {	
         tittle: "Oskar i Pani Róża",
-        year: "2002"
+        year: "2002",
         category: "powieść epistolarna",
         image: "https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp",
         alt: "Okładka Oskar i Pani Róża",
         author: "Eric-Emmanuel Schmitt",
     },	
-    {w
+    {
         tittle: "Wilk stepowy",
-        year: "1927"
+        year: "1927",
         category: "powieść psychologiczna",
         image: "https://www.gandalf.com.pl/o/wilk-stepowy%2Cbig%2C3757.webp",
         alt: "Okładka Wilk stepowy",
@@ -89,3 +95,58 @@ const books = [
     }]
 
 
+    const generateList = () => {
+        list.innerHTML = '';
+      
+        books.forEach((book, index) => {
+          list.innerHTML += `
+          <li>
+            <h3>${book.tittle}</h3>          
+            <img src=${book.image} alt=${book.alt}/></a>
+            </br>
+            year: ${book.year}<br/>
+            category: ${book.category}<br/>
+            author: ${book.author}<br/>
+          </li>
+          `
+        })
+      }
+
+
+      const validateForm = () => {
+        return searchText.value.length > 2;
+      }
+
+
+
+    btnSearch.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        alert.innerHTML="";
+        const isValid = validateForm();
+        if(!isValid) {
+            alert.innerHTML="za mało znaków"            
+            return;
+        }
+      
+
+        // generateSlide();
+      })
+
+
+    generateList();
+
+{/* <li>
+  <h3>Mały książe</h3>
+  <img src="https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp" alt="test"/></a>       
+   <br/>    
+   year: 1943<br/>
+   category: powieść filozoficzna<br/>
+   author: Antoine De Saint-Exupéry<br/>
+</li>    */}
+
+
+    // <li class="d-none ${index === activeSlide ? 'active' : ''}">
+    //           <img src=${slide.source} alt=${slide.alt} class="slider__photo"/>
+    //           <p class="slider__slide-title">${slide.text}</p>
+    //         </li>

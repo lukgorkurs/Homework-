@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book list</title>
     <link rel="stylesheet" href="./css/books.css">
 </head>
 <body>
 
-    <img src="https://www.gandalf.com.pl/o/maly-ksiaze-p%2Cbig%2C534525.webp" alt="okładka" class="slider__photo"/>
+    <div id="header">
+        <form id="form">
+            <label for="todoItem">              
+              <input id="searchText" type="text" name="searchText" placeholder="book tittle ..." />
+            </label>
+            <button type="submit" id="btnSearch">Search</button>            
+          </form>          
+          <p id=alert></p>
+    </div>
+    <div>
+      <ul id="galery"></ul>
+    </div>
     
     <script src="./js/books.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+<!-- <li>
+  <h3>Mały książe</h3>
+  <img src="https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp" alt="test"/></a>       
+   <br/>    
+   year: 1943<br/>
+   category: powieść filozoficzna<br/>
+   author: Antoine De Saint-Exupéry<br/>
+</li>        
+
+<li><img src="https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp"/></a>
+  Tittle: Mały książe<br/>
+  year: 1943<br/>
+  category: powieść filozoficzna<br/>
+  author: Antoine De Saint-Exupéry<br/>       
+</li>        
+<li><img src="https://www.gandalf.com.pl/o/maly-ksiaze-p%2Cbig%2C534525.webp"/></a>
+  Tittle: Mały książe<br/>
+  year: 1943<br/>
+  category: powieść filozoficzna<br/>
+  author: Antoine De Saint-Exupéry<br/>
+</li>        
+<li><img src="https://www.gandalf.com.pl/o/mistrz-i-malgorzata-x%2Cbig%2C701420.webp"/></a></li>   
+<li><img src="https://ecsmedia.pl/c/buszujacy-w-zbozu-b-iext117338092.jpg"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/duma-i-uprzedzenie-n%2Cbig%2C402912.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/wichrowe-wzgorza-o%2Cbig%2C532013.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/wyspa-skarbow-o%2Cbig%2C476663.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/podroze-z-charleyem%2Cbig%2C476723.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/jadro-ciemnosci-e%2Cbig%2C289618.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/rok-1984-C%2Cbig%2C58326.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/oskar-i-pani-roza-twarda%2Cbig%2C8283.webp"/></a></li>   
+<li><img src="https://www.gandalf.com.pl/o/wilk-stepowy%2Cbig%2C3757.webp"/></a></li>    -->

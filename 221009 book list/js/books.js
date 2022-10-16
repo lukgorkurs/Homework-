@@ -2,10 +2,11 @@
 const list = document.querySelector('#galery');
 const alert = document.querySelector('#alert');
 const btnSearch = document.querySelector('#btnSearch');
+const btnOpenAdd = document.querySelector('#btnOpenAdd');
 const searchText = document.querySelector('#searchText');
 
 
-const books = [
+const booksInit = [
     {
         tittle: "Mały książe",
         year: "1943",
@@ -95,60 +96,71 @@ const books = [
         author: "Hermann Hesse"
     }]
 
+    let books = [];
 
-    const generateList = (filter) => {
-        list.innerHTML = '';
+const generateList = (filter) => {
+    list.innerHTML = '';
       
-        books
-          .filter(book => book.tittle.toLowerCase().includes(filter.toLowerCase()))
-          .forEach((book, index) => {
-          list.innerHTML += `
-          <li>
+    books
+        .filter(book => book.tittle.toLowerCase().includes(filter.toLowerCase()))
+        .forEach((book, index) => {
+        list.innerHTML += `
+        <li>
             <h3>${book.tittle}</h3>          
             <img src=${book.image} alt=${book.alt}/></a>
             </br>
             year: ${book.year}<br/>
             category: ${book.category}<br/>
             author: ${book.author}<br/>
-          </li>
-          `
-        })
-      }
+        </li>`
+    })
+}
 
 
-      const validateForm = () => {
-        return searchText.value.length > 2;
-      }
-
-
-
-    btnSearch.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        alert.innerHTML="";
+const initStorage = () => {
+    
+    let daneStorage = JSON.parse(localStorage.getItem("BookListLG"));
+	
+	if (daneStorage === null) {
         
-        if (searchText.value.length===0) {
-            generateList('');   //all books
-            return;
-        }
+        let daneStorageJSON = JSON.stringify(booksInit);
+	    localStorage.setItem("BookListLG",daneStorageJSON);
+        
+     };
 
-        const isValid = validateForm();
-        if(!isValid) {
-            alert.innerHTML="za mało znaków"    
-            searchText.value='';        
-            return;
-        }
+     books = JSON.parse(localStorage.getItem("BookListLG"));
 
-        //  alert.innerHTML=searchText.value;
-
-         generateList(searchText.value);
-
-         searchText.value='';
-      
-
-        // generateSlide();
-      })
+}
 
 
-    generateList('');
+btnOpenAdd.addEventListener('click', (event) => {
+    event.preventDefault();       
+    location.href = "addBook.html";
+    
+})
+
+btnSearch.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert.innerHTML="";
+        
+    if (searchText.value.length===0) {
+        generateList('');   //all books
+        return;
+    }
+
+    if (searchText.value.length<3) {
+        alert.innerHTML="za mało znaków."    
+        searchText.value='';        
+        return;
+    }
+
+    generateList(searchText.value);
+    searchText.value='';
+})
+
+initStorage();
+generateList('');
+
+
+
 

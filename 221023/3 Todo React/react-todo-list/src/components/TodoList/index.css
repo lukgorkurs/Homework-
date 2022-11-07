@@ -1,0 +1,33 @@
+.alert {
+    color: red;
+}
+
+.todo {
+    margin-top: 20px;
+    margin-left: 20px;    
+}
+
+.btnSubmit {
+    margin-left: 20px;    
+    margin-bottom: 20px;    
+    box-shadow: 3px 5px #e7e7e7;
+}
+
+.input {
+    margin-left: 20px;   
+    box-shadow: 3px 5px #e7e7e7;   
+}
+
+table {
+    border: 1px solid black;    
+    border-spacing: 0;
+    box-shadow: 3px 5px #e7e7e7;   
+}
+
+th,
+td {
+    margin: 0;    
+    padding: 5px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}

@@ -1,0 +1,10 @@
+table {
+    border-style: none;
+    text-align: right;
+    color:rgb(0, 238, 255);
+    padding: 30px;;
+}
+
+td {
+    padding: 5px;
+}

@@ -1,0 +1,46 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Gorączka złota",
+      "description": "Komedia",
+      "year": 1925,
+      "poster": "https://fwcdn.pl/fpo/13/36/31336/7183102.6.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Królewna Śnieżka i siedmiu krasnoludków",
+      "description": "Animacja",
+      "year": 1937,
+      "poster": "https://fwcdn.pl/fpo/05/91/30591/7914376.6.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Pół żartem, pół serio",
+      "description": "Komiedia",
+      "year": 1959,
+      "poster": "https://fwcdn.pl/fpo/06/71/30671/7713382.6.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Lot nad kukułczym gniazdem",
+      "description": "Dramat/Psychologiczny",
+      "year": 1975,
+      "poster": "https://fwcdn.pl/fpo/10/19/1019/7386645.6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Rain Man",
+      "description": "Dramat/Komedia",
+      "year": 1988,
+      "poster": "https://fwcdn.pl/fpo/10/08/1008/7521209.6.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Pulp Fiction",
+      "description": "Gangsterski",
+      "year": 1994,
+      "poster": "https://fwcdn.pl/fpo/10/39/1039/7212328.6.jpg"
+    }
+  ]
+}

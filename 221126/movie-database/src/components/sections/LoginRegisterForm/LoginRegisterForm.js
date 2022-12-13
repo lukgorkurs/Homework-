@@ -63,11 +63,14 @@ function LoginRegisterForm(props) {
 
       {/* text={props.submitText} */}
 
-      <td></td>
+      <td>      
+      </td>
       <td>
-
       <Button>
-            Zaloguj
+            Register
+      </Button>
+      <Button>
+            Logon
       </Button>
       </td>
 
